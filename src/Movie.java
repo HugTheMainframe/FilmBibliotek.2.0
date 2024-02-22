@@ -43,4 +43,17 @@ public class Movie {
     public String getGenre() {
         return genre;
     }
+
+    @Override
+    public String toString(){
+        String result = "";
+        result += "Title: " + title + "\nDirector: " + director + "\nYear created: " + yearCreated + "\nIs In Color: ";
+        if(isInColor == true){
+            result += " er i farve ";
+        } else {
+            result += " er ikke i farve ";
+        }
+        result += "\nLength In Minuts: " + lengthInMinuts + "\nGenre: " + genre + "\n";
+        return result;
+    }
 }
