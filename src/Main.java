@@ -5,9 +5,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        MovieCollection movieList = new MovieCollection();
         Controller myController = new Controller();
-        int i = 0;
 
         while(true) {
             System.out.println("Welcome to my movie collection");
@@ -34,16 +32,16 @@ public class Main {
                 String genre = input.next();
                 Movie movieOne = new Movie(title, director, yearCreated,
                         isInColor, lengthInMinuts, genre);
-                movieList.addMovie(movieOne);
+                myController.addMovie(movieOne);
 
             } else if (dicision == 2){
                 System.out.println("My Movie Collection:");
-                System.out.println(movieList);
+                System.out.println(myController.toString());
 
             } else if (dicision == 3){
                 //Viker ikke...
                 System.out.println("Here is the movie you were looking for:");
-                String listt = movieList.searchMovie("bob");
+                String listt = myController.title("bob");
                 System.out.println(listt);
 
             } else if (dicision == 4){

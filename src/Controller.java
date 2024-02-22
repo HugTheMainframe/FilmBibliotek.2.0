@@ -6,12 +6,16 @@ public class Controller {
     public Controller(){
         this.movieCollections = new MovieCollection();
     }
+    public void addMovie(Movie movie){
+        movieCollections.addMovie(movie);
+    }
 
-//    public void addMovie(String title, String director, int yearCreated, boolean isInColor,
-//                         int lengthInMinuts, String genre){
-//        Movie movie = new Movie(title, director, yearCreated, isInColor, lengthInMinuts, genre);
-//        movieCollections.addMovie(movie);
-//
-//    }
+    public String title(String title){
+        return movieCollections.searchMovie(title);
+    }
 
+    @Override
+    public String toString() {
+        return movieCollections.toString();
+    }
 }
