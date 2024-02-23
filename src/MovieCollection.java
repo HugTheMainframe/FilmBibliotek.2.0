@@ -7,15 +7,15 @@ public class MovieCollection {
         movieCollections.add(addMovie);
     }
 
-//virker ikke...
     public String searchMovie(String movieTitle){
         String result = "";
         for (Movie movie : movieCollections){
-            if(movie.getTitle().equals(movieTitle)){
+            if(movie.getTitle().toLowerCase().contains(movieTitle.toLowerCase())){
+                System.out.println(result);
                 result = movie.toString();
-                return result;
+            } else {
+                result = "No such movie exits in your collection";
             }
-            return result;
         }
         return result;
     }

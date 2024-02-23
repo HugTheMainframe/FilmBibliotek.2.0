@@ -39,10 +39,12 @@ public class Main {
                 System.out.println(myController.toString());
 
             } else if (dicision == 3){
-                //Viker ikke...
+                System.out.print("Please type the movie you are searching for: ");
+                String movieSearch = input.next();
                 System.out.println("Here is the movie you were looking for:");
-                String listt = myController.title("bob");
-                System.out.println(listt);
+                String printMovieInfo = myController.title(movieSearch);
+                System.out.print(printMovieInfo);
+//                System.out.print("Press enter to continue");
 
             } else if (dicision == 4){
                 System.out.println("Quitting...");
