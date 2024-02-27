@@ -14,6 +14,12 @@ public class Controller {
         return movieCollections.searchMovie(title);
     }
 
+    public void changeMovie(String title, String newTitle, String newDirector, int newYearCreated,
+                              boolean newIsInColor, int newLengthInMinuts, String newGenre){
+        movieCollections.editMovieSearch(title, newTitle, newDirector, newYearCreated, newIsInColor,
+                newLengthInMinuts, newGenre);
+    }
+
     @Override
     public String toString() {
         return movieCollections.toString();

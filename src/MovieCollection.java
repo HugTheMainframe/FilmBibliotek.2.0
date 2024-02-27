@@ -12,12 +12,27 @@ public class MovieCollection {
         for (Movie movie : movieCollections){
             if(movie.getTitle().toLowerCase().contains(movieTitle.toLowerCase())){
                 System.out.println(result);
-                result = movie.toString();
+                result += movie.toString();
             } else {
                 result = "No such movie exits in your collection";
             }
         }
         return result;
+    }
+
+    public void editMovieSearch(String title, String newTitle, String newDirector, int newYearCreated,
+                                boolean newIsInColor, int newLengthInMinuts, String newGenre){
+        for (Movie movie : movieCollections){
+            if(movie.getTitle().equalsIgnoreCase(title)){
+                movie.setTitle(newTitle);
+                movie.setDirector(newDirector);
+                movie.setYearCreated(newYearCreated);
+                movie.setIsInColor(newIsInColor);
+                movie.setLengthInMinuts(newLengthInMinuts);
+                movie.setGenre(newGenre);
+                break;
+            }
+        }
     }
 
     @Override

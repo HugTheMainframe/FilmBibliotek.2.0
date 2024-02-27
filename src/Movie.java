@@ -23,25 +23,44 @@ public class Movie {
     public String getTitle() {
         return title;
     }
+    public void setTitle(String title){
+        this.title = title;
+    }
 
     public String getDirector() {
         return director;
     }
 
+    public void setDirector(String director) {
+        this.director = director;
+    }
+
     public int getYearCreated() {
         return yearCreated;
+    }
+    public void setYearCreated(int yearCreated){
+        this.yearCreated = yearCreated;
     }
 
     public boolean getIsinColor() {
         return isInColor;
     }
+    public void setIsInColor(boolean isInColor){
+        this.isInColor = isInColor;
+    }
 
     public int getLengthInMinuts() {
         return lengthInMinuts;
     }
+    public void setLengthInMinuts(int lengthInMinuts){
+        this.lengthInMinuts = lengthInMinuts;
+    }
 
     public String getGenre() {
         return genre;
+    }
+    public void setGenre(String genre){
+        this.genre = genre;
     }
 
     @Override
