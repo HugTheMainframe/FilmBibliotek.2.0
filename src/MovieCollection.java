@@ -7,6 +7,10 @@ public class MovieCollection {
         movieCollections.add(addMovie);
     }
 
+    public ArrayList<Movie> getMovieCollections() {
+        return movieCollections;
+    }
+
     public String searchMovie(String movieTitle){
         String result = "";
         for (Movie movie : movieCollections){

@@ -56,8 +56,17 @@ public class Interface {
     }
 
     public void editMovie(){
-        System.out.println("Please type in the movie you would change: ");
+        System.out.print("Please type in the movie you would change: ");
         String movieSearch = input.next();
+//        System.out.print("1. for changing the Title ");
+//        System.out.print("2. for changing the Director ");
+//        System.out.print("3. for changing the which year movie was made ");
+//        System.out.print("4. for changing the is movie in color ");
+//        System.out.print("5. for changing the Length of the movie ");
+//        System.out.print("6. for changing the Genre ");
+//        System.out.print("7. for overwriting the whole movie");
+//        int userChoice = input.nextInt();
+
         System.out.print("Enter the new title of the film: ");
         input.nextLine();
         String title = input.nextLine();
