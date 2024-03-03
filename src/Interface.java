@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Interface {
@@ -57,30 +58,66 @@ public class Interface {
 
     public void editMovie(){
         System.out.print("Please type in the movie you would change: ");
-        String movieSearch = input.next();
-//        System.out.print("1. for changing the Title ");
-//        System.out.print("2. for changing the Director ");
-//        System.out.print("3. for changing the which year movie was made ");
-//        System.out.print("4. for changing the is movie in color ");
-//        System.out.print("5. for changing the Length of the movie ");
-//        System.out.print("6. for changing the Genre ");
-//        System.out.print("7. for overwriting the whole movie");
-//        int userChoice = input.nextInt();
-
-        System.out.print("Enter the new title of the film: ");
         input.nextLine();
-        String title = input.nextLine();
-        System.out.print("Enter the a new director of the film: ");
-        String director = input.nextLine();
-        System.out.print("Enter the a new year of the film: ");
-        int yearCreated = input.nextInt();
-        System.out.print("Enter if the film is in color(yes or no): ");
-        Boolean isInColor = input.next().equalsIgnoreCase("yes");
-        System.out.print("Enter the a new length of the film(in minuts): ");
-        int lengthInMinuts = input.nextInt();
-        System.out.print("Enter the a new genre of the film: ");
-        String genre = input.next();
-        myController.changeMovie(movieSearch, title, director, yearCreated, isInColor, lengthInMinuts, genre);
+        String movieSearch = input.nextLine();
+        Movie movie = myController.searchMovie(movieSearch);
+
+        System.out.println("1. for changing the title");
+        System.out.println("2. for changing the Director ");
+        System.out.println("3. for changing the which year movie was made ");
+        System.out.println("4. for changing the is movie in color ");
+        System.out.println("5. for changing the Length of the movie ");
+        System.out.println("6. for changing the Genre ");
+        System.out.println("7. for overwriting the whole movie");
+        System.out.println("8. to quit");
+        String userDicision = input.nextLine();
+        switch (userDicision) {
+            case "1":
+                System.out.print("Enter the new title of the film: ");
+                String newTitle = input.nextLine();
+                movie.setTitle(newTitle);
+                break;
+            case "2":
+                System.out.print("Enter the a new director of the film: ");
+                String director = input.nextLine();
+                movie.setDirector(director);
+                break;
+            case "3":
+                System.out.print("Enter the a new year of the film: ");
+                int yearCreated = input.nextInt();
+                movie.setYearCreated(yearCreated);
+                break;
+            case "4":
+                System.out.print("Enter if the film is in color(yes or no): ");
+                Boolean isInColor = input.next().equalsIgnoreCase("yes");
+                movie.setIsInColor(isInColor);
+                break;
+            case "5":
+                System.out.print("Enter the a new length of the film(in minuts): ");
+                int lengthInMinuts = input.nextInt();
+                movie.setLengthInMinuts(lengthInMinuts);
+                break;
+            case "6":
+                System.out.print("Enter the a new genre of the film: ");
+                String genre = input.next();
+                movie.setGenre(genre);
+                break;
+            case "7":
+                System.out.print("Enter the new title of the film: ");
+                String title = input.nextLine();
+                System.out.print("Enter the a new director of the film: ");
+                director = input.nextLine();
+                System.out.print("Enter the a new year of the film: ");
+                yearCreated = input.nextInt();
+                System.out.print("Enter if the film is in color(yes or no): ");
+                isInColor = input.next().equalsIgnoreCase("yes");
+                System.out.print("Enter the a new length of the film(in minuts): ");
+                lengthInMinuts = input.nextInt();
+                System.out.print("Enter the a new genre of the film: ");
+                genre = input.next();
+                myController.changeMovie(movie, title, director, yearCreated, isInColor, lengthInMinuts, genre);
+                break;
+        }
     }
 
     public void startProgram(){

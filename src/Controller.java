@@ -14,9 +14,13 @@ public class Controller {
         return movieCollections.searchMovie(title);
     }
 
-    public void changeMovie(String title, String newTitle, String newDirector, int newYearCreated,
+    public Movie searchMovie(String title){
+        return movieCollections.searchMovietest(title);
+    }
+
+    public void changeMovie(Movie movie, String newTitle, String newDirector, int newYearCreated,
                               boolean newIsInColor, int newLengthInMinuts, String newGenre){
-        movieCollections.editMovieSearch(title, newTitle, newDirector, newYearCreated, newIsInColor,
+        movieCollections.editMovieSearch(movie, newTitle, newDirector, newYearCreated, newIsInColor,
                 newLengthInMinuts, newGenre);
     }
 

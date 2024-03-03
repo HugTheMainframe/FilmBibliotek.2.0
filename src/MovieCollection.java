@@ -24,19 +24,27 @@ public class MovieCollection {
         return result;
     }
 
-    public void editMovieSearch(String title, String newTitle, String newDirector, int newYearCreated,
-                                boolean newIsInColor, int newLengthInMinuts, String newGenre){
+    public Movie searchMovietest(String movieTitle){
         for (Movie movie : movieCollections){
-            if(movie.getTitle().equalsIgnoreCase(title)){
-                movie.setTitle(newTitle);
-                movie.setDirector(newDirector);
-                movie.setYearCreated(newYearCreated);
-                movie.setIsInColor(newIsInColor);
-                movie.setLengthInMinuts(newLengthInMinuts);
-                movie.setGenre(newGenre);
-                break;
+            if(movie.getTitle().toLowerCase().equalsIgnoreCase(movieTitle)){
+                System.out.println(movie);
+                return movie;
             }
         }
+        return null;
+
+
+    }
+
+    public void editMovieSearch(Movie movie, String newTitle, String newDirector, int newYearCreated,
+                                boolean newIsInColor, int newLengthInMinuts, String newGenre){
+        movie.setTitle(newTitle);
+        movie.setDirector(newDirector);
+        movie.setYearCreated(newYearCreated);
+        movie.setIsInColor(newIsInColor);
+        movie.setLengthInMinuts(newLengthInMinuts);
+        movie.setGenre(newGenre);
+
     }
 
     @Override
